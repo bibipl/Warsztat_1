@@ -1,5 +1,10 @@
 package pl.coderslab.zad1;
 
+// Program losuje liczbę z zakresu 1- range (ustaw w "int range");
+// Następnie wczytuje liczby z tego zakresu z klawiatury
+// informuje czy wczytana liczba jest > czy <
+// powtarza tak długo aż zgadniesz liczbę.
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,16 +14,17 @@ public class guessnumber {
         int range = 100; //od 1 do 100
 
         int number = drawNumber (range); // number losuje komputer
-
+        int counter = 0;                            // liczymy ile razy zgadujesz zanim się uda.
         while (true) {                              // pętla powtarza się aż zgadniesz.
             int inputNumber = takeNumber(range);    // wczytujemy liczbę z klawiatury
+            counter++;
             if (inputNumber == number) break;         // zgadłeś !!! kończy pętlę.
             else if (inputNumber > number)
                 System.out.println(inputNumber+" to za dużo! Spróbuj z mniejszą liczbą.");
             else
                 System.out.println(inputNumber+" to za mało! Spróbuj z większą liczbą.");
         }
-        System.out.println("Zgadłeś, to była liczba "+number+". Dziękuję za wspólną zabawę.");
+        System.out.println("Zgadłeś, to była liczba "+number+". Potrzebowałeś na to "+counter+ " prób. Dziękuję za wspólną zabawę.");
     }
 
     static int drawNumber(int range) {
