@@ -27,29 +27,31 @@ public class guessnumber {
         System.out.println("Zgadłeś, to była liczba "+number+". Potrzebowałeś na to "+counter+ " prób. Dziękuję za wspólną zabawę.");
     }
 
-    static int drawNumber(int range) {
+    // Metoda losuje liczbę z zakresu 1 - range
+    private static int drawNumber(int range) {
 
         Random random = new Random();
         return random.nextInt(range) + 1;
 
     }
 
-    static int takeNumber (int range) {
+    // Metoda pobiera liczbę z zakresu 1-range klawiatury wymaga "java.util.scanner"
+    private static int takeNumber (int range) {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.print ("Zgadnij liczbę z zakresu 1-100 :");
-        int pickedNumber = 0;                       // poza zakresem bo jest od 1-range
+        System.out.print ("Zgadnij liczbę z zakresu 1-"+range+" :");
+        int pickedNumber;                       // poza zakresem bo jest od 1-range
         while (true) {       // int zakres 1-range
             while (!scan.hasNextInt()) {
                 scan.nextLine();
                 System.out.println("To nie jest liczba całkowita!");    // nit int
-                System.out.print ("Zgadnij jeszcze raz liczbę z zakresu 1-100 :");
+                System.out.print ("Zgadnij jeszcze raz liczbę z zakresu 1-"+range+" : ");
             }
             pickedNumber = scan.nextInt();
             if ((pickedNumber < 1) || (pickedNumber > (range))) {
-                System.out.println("To nie jest liczba z zakresu 1-100!");
-                System.out.print ("Zgadnij jeszcze raz liczbę z zakresu 1-100 :");
+                System.out.println("To nie jest liczba z zakresu 1-"+range+" !");
+                System.out.print ("Zgadnij jeszcze raz liczbę z zakresu 1-"+range+" : ");
             }
             else {
                 break;  // jeżeli liczba jest int i z zakresu ok to kończy pętlę.

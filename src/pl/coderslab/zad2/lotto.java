@@ -45,6 +45,7 @@ public class lotto {
         int numbOfWinns = compare2intArr (coupon, losy); // numbOfWins zawiela liczbę trafionych
         System.out.print ("\nTwoja liczba trafień to : "+numbOfWinns+". "); // kominukat końcowy o liczbie trafień.
         if (numbOfWinns>2)System.out.println("Wygrałeś nagrodę!");
+
         else System.out.println("Niestety nic nie wygrałeś.");
     }
 // ### Koniec main ###
