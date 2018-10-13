@@ -27,7 +27,7 @@ public class guessnumber {
         System.out.println("Zgadłeś, to była liczba "+number+". Potrzebowałeś na to "+counter+ " prób. Dziękuję za wspólną zabawę.");
     }
 
-    // Metoda losuje liczbę z zakresu 1 - range
+    // Metoda losuje liczbę z zakresu 1 - range. Wymaga java.util.Random
     private static int drawNumber(int range) {
 
         Random random = new Random();
